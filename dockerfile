@@ -1,20 +1,14 @@
-# Use an official Node.js runtime as the base image
-FROM node:14
+# Use an official Ubuntu as the base image
+FROM ubuntu:20.04
 
-# Set the working directory in the container (root of the project)
-WORKDIR /usr/src/app
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+# Example: Install a basic package (nano text editor)
+RUN apt-get update && apt-get install -y nano
 
-# Install dependencies
-RUN npm install
+# Expose a port (optional)
+# EXPOSE 8080
 
-# Copy the rest of your application's source code to the container
-COPY . .
-
-# Expose a port if your application listens on a specific port
-EXPOSE 3000
-
-# Define the command to run when the container starts
-CMD ["node", "app.js"]
+# Define a command to run when the container starts
+CMD ["bash"]
