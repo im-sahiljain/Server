@@ -1,8 +1,8 @@
 # Use an official Node.js runtime as the base image
 FROM node:14
 
-# Set the working directory in the container
-WORKDIR /app
+# Set the working directory in the container (root of the project)
+WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
