@@ -21,5 +21,3 @@ jobs:
     - name: Run Docker Container
       run: |
         docker run -d -p 8080:3000 my-docker-image
-      ports:
-        - 8080:3000  # Map container port 3000 to host port 8080
